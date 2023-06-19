@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 # 画像の読み込み
-image_path = "../image/Lenna.jpg"
+image_path = "image/Lenna.jpg"
 image = cv2.imread(image_path)
 
 # 画像を音声の特徴に変換
@@ -13,7 +13,7 @@ image = cv2.imread(image_path)
 audio_features = image.flatten()
 
 # メロディ生成のためのディープラーニングモデルの読み込み
-model_path = "../model/model.h5" #ここが未完成
+model_path = "model/model.h5" #ここが未完成
 model = tf.keras.models.load_model(model_path)
 
 # メロディの生成
@@ -21,7 +21,7 @@ model = tf.keras.models.load_model(model_path)
 melody = model.predict(np.expand_dims(audio_features, axis=0))
 
 # MIDIファイルの作成
-output_path = "../midi/output.mid"
+output_path = "midi/output.mid"
 midi_file = mido.MidiFile()
 track = mido.MidiTrack()
 midi_file.tracks.append(track)

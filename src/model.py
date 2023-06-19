@@ -20,4 +20,4 @@ model.compile(loss='mse', optimizer='sgd', metrics=['accuracy'])
 model.fit(X_train, y_train, epochs=10, batch_size=32)
 
 # モデルの保存
-model.save('../model/test.h5')
+model.save('model/test.h5')
