@@ -20,7 +20,7 @@ X_test = X_test.reshape(10000, 784)/255
 model_path = "model/MNIST.h5"
 model = tf.keras.models.load_model(model_path)
 
-# Kerasではバッチ処理を前提としているため、データの型を(1,28,28)とする必要がある
+# Kerasではバッチ処理を前提としているため、データの型を(1,784)とする必要がある
 img_expand = X_train[0][np.newaxis, ...]
 print(img_expand.shape)
 
