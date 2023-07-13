@@ -1,8 +1,8 @@
-# これは.image/raw/*.pngをすべて160:90に変換し.image/pro/に保存するコード
+# これは./image/raw/*.pngをすべて160:90に変換し./image/pro/に保存するコード
 import cv2
 import pathlib
 
-# .image/raw/内の.pngをリストに格納していく
+# ./image/raw/内の.pngをリストに格納していく
 image_list = list(pathlib.Path("./image/raw").glob("**/*.png"))
 
 for i in range(len(image_list)):
