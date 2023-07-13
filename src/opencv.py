@@ -2,6 +2,7 @@
 import cv2
 import pathlib
 
+# .image/raw/内の.pngをリストに格納していく
 image_list = list(pathlib.Path("./image/raw").glob("**/*.png"))
 
 for i in range(len(image_list)):
@@ -12,11 +13,12 @@ for i in range(len(image_list)):
     # img[top : bottom, left : right]
     img_trim = img[90 : 990, 160 : 1760]
 
-    print(image_list[i].name)
-
     # 画像を160:90に縮小
     img_shrink = cv2.resize(img_trim, (160, 90))
 
     # 画像を保存
     output_path = "./image/pro/" + image_list[i].name
     cv2.imwrite(output_path, img_shrink)
+
+    # 変更した画像の名前を出力
+    print(image_list[i].name)
